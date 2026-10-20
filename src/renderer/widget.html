@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Growth'Lib</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: transparent; overflow: hidden; }
+  #carte {
+    font-family: -apple-system, Segoe UI, sans-serif;
+    background: rgba(21, 22, 15, .94);
+    border: 1px solid #2c2e22;
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: #eee;
+    cursor: pointer;
+    user-select: none;
+  }
+  #carte.erreur { border-color: #6b2c2c; box-shadow: 0 0 0 1px rgba(224,124,124,.3); }
+  .ligne1 { display: flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 600; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #5fd47a; flex: none; }
+  .dot.off { background: #666; }
+  .dot.err { background: #e07c7c; }
+  .rows { margin-top: 6px; font-size: 11px; color: #bbb; display: flex; gap: 14px; }
+  .rows b { color: #eee; font-size: 12.5px; }
+  .alerte { color: #e07c7c !important; }
+  .alerte b { color: #e07c7c !important; }
+  #badge {
+    display: none; position: absolute; top: -6px; right: -6px;
+    background: #e05545; color: #fff; font-size: 10px; font-weight: 700;
+    border-radius: 99px; min-width: 16px; height: 16px; line-height: 16px; text-align: center; padding: 0 3px;
+  }
+  #fermer {
+    position: absolute; top: -7px; left: -7px; width: 16px; height: 16px;
+    background: #3a3d30; color: #ccc; border-radius: 50%; font-size: 11px;
+    line-height: 16px; text-align: center; cursor: pointer; display: none;
+  }
+  #carte:hover ~ #fermer, #fermer:hover { display: block; }
+</style>
+</head>
+<body>
+  <div style="position:relative">
+    <div id="badge">!</div>
+    <div id="carte">
+      <div class="ligne1"><span class="dot" id="dot"></span><span id="titre">Growth'Lib</span></div>
+      <div class="rows">
+        <span>⏳ <b id="n-pending">—</b></span>
+        <span id="row-alertes">⚠ <b id="n-alertes">—</b></span>
+      </div>
+    </div>
+    <div id="fermer" title="Masquer (réaffichable depuis la barre système)">×</div>
+  </div>
+  <script src="widget-renderer.js"></script>
+</body>
+</html>

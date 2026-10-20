@@ -1,0 +1,58 @@
+{
+  "name": "growthlib-desktop",
+  "version": "0.0.3",
+  "private": true,
+  "description": "Growth'Lib - execution locale (D3) : exclusif avec le cloud, un seul compte LinkedIn par installation.",
+  "author": "Liberall Conseil",
+  "main": "src/main/index.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac",
+    "dist": "electron-builder --win --mac",
+    "release:win": "electron-builder --win --publish always"
+  },
+  "build": {
+    "appId": "com.liberall-conseil.growthlib-desktop",
+    "productName": "Growth'Lib",
+    "directories": {
+      "output": "dist"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "contactliberall",
+      "repo": "growthlib-desktop-releases"
+    },
+    "files": [
+      "src/**/*",
+      "vendor/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.business"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.103.0",
+    "auto-launch": "^5.0.6",
+    "chalk": "^4.1.2",
+    "electron-updater": "^6.8.9",
+    "node-fetch": "^2.7.0",
+    "puppeteer": "^22.0.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^26.15.3"
+  }
+}

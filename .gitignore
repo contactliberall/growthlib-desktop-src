@@ -1,0 +1,7 @@
+node_modules/
+pairing-password.txt
+*.enc
+dist/
+vendor/
+*.log
+.DS_Store
