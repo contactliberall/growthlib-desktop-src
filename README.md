@@ -11,7 +11,7 @@ Avant de builder :
 ```bash
 # 1. Cloner les deux dépôts côte à côte (même dossier parent)
 git clone https://github.com/contactliberall/growthlib-worker.git li-puppeteer
-git clone https://github.com/contactliberall/growthlib-desktop.git
+git clone https://github.com/contactliberall/growthlib-desktop-src.git growthlib-desktop
 cd growthlib-desktop
 
 # 2. Installer les dépendances
